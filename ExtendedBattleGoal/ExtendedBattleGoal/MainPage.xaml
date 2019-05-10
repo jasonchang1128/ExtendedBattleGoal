@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExtendedBattleGoal"
+             x:Class="ExtendedBattleGoal.MainPage">
+
+    <StackLayout>
+        <Label Text="Extended Battle Goal Generator" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+        <Label Text="by Jason Chang" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Grid Margin="20,35,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Label x:Name="BatGoalName0"    Grid.Column="0" Text="Goal 0" />
+            <Label x:Name="BatGoalDesc0"    Grid.Row="0" Grid.Column="1" Text="Description 0" />
+            <Label x:Name="BatGoalChecks0"  Grid.Row="0" Grid.Column="2" Text="Checks 0" />
+            <Label x:Name="BatGoalName1"    Grid.Row="1" Grid.Column="0" Text="Goal 0" />
+            <Label x:Name="BatGoalDesc1"    Grid.Row="1" Grid.Column="1" Text="Description 0" />
+            <Label x:Name="BatGoalChecks1"  Grid.Row="1" Grid.Column="2" Text="Checks 0" />
+        </Grid>
+
+        <Button Text="Generate Battle Goals" Clicked="Button_Clicked" />
+    </StackLayout>
+
+</ContentPage>
