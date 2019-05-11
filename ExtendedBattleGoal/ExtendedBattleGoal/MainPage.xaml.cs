@@ -24,6 +24,32 @@ namespace ExtendedBattleGoal
         {
             ExtendedBattleGoal.Data.BattleGoals.BattleGoalDraw();
             ((Button)sender).Text = $"Battle Goals Generated";
+            ChooseButton1.IsEnabled = true;
+            ChooseButton2.IsEnabled = true;
+            ChooseButton1.IsVisible = true;
+            ChooseButton2.IsVisible = true;
+        }
+
+        private void ChosenGoal1(object sender, EventArgs e)
+        {
+            ChooseButton1.IsEnabled = false;
+            ChooseButton2.IsEnabled = false;
+            ChooseButton1.IsVisible = false;
+            ChooseButton2.IsVisible = false;
+            BatGoalName1.Text = "";
+            BatGoalDesc1.Text = "";
+            BatGoalChecks1.Text = "";
+        }
+
+        private void ChosenGoal2(object sender, EventArgs e)
+        {
+            ChooseButton1.IsEnabled = false;
+            ChooseButton2.IsEnabled = false;
+            ChooseButton1.IsVisible = false;
+            ChooseButton2.IsVisible = false;
+            BatGoalName0.Text = "";
+            BatGoalDesc0.Text = "";
+            BatGoalChecks0.Text = "";
         }
     }
 }
