@@ -13,7 +13,6 @@ namespace ExtendedBattleGoal
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
-        //ExtendedBattleGoal.Data.BattleGoals goalObj;
         public MainPage()
         {
             InitializeComponent();
