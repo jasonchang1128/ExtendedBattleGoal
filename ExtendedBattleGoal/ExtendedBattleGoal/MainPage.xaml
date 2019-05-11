@@ -25,12 +25,14 @@
             <Label x:Name="BatGoalName0"    Grid.Column="0" Text="Goal 0" />
             <Label x:Name="BatGoalDesc0"    Grid.Row="0" Grid.Column="1" Text="Description 0" />
             <Label x:Name="BatGoalChecks0"  Grid.Row="0" Grid.Column="2" Text="Checks 0" />
+            <Button x:Name="ChooseButton1" Text="Choose" Clicked="ChosenGoal1" Grid.Row="0" Grid.Column="3" />
             <Label x:Name="BatGoalName1"    Grid.Row="1" Grid.Column="0" Text="Goal 0" />
             <Label x:Name="BatGoalDesc1"    Grid.Row="1" Grid.Column="1" Text="Description 0" />
             <Label x:Name="BatGoalChecks1"  Grid.Row="1" Grid.Column="2" Text="Checks 0" />
+            <Button x:Name="ChooseButton2" Text="Choose" Clicked="ChosenGoal2" Grid.Row="1" Grid.Column="3"/>
         </Grid>
 
-        <Button Text="Generate Battle Goals" Clicked="Button_Clicked" />
+        <Button x:Name="GenButton" Text="Generate Battle Goals" Clicked="Button_Clicked" />
     </StackLayout>
 
 </ContentPage>

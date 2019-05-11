@@ -13,37 +13,43 @@ namespace ExtendedBattleGoal
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
-        private BattleGoalData BatGoalData = new BattleGoalData();
+        //ExtendedBattleGoal.Data.BattleGoals goalObj;
         public MainPage()
         {
             InitializeComponent();
+            ExtendedBattleGoal.Data.BattleGoals.BattleGoalInit();
         }
 
-        Random rnd = new Random();
         void Button_Clicked(object sender, System.EventArgs e)
         {
-            List<int> listBatGoalNum = new List<int>();
-
-            for (int i = 0; i < 2; i++)
-            {
-                int number;
-                do
-                {
-                    number = rnd.Next(1, 78);
-                } while (listBatGoalNum.Contains(number));
-                listBatGoalNum.Add(number);
-            }
+            ExtendedBattleGoal.Data.BattleGoals.BattleGoalDraw();
             ((Button)sender).Text = $"Battle Goals Generated";
+            ChooseButton1.IsEnabled = true;
+            ChooseButton2.IsEnabled = true;
+            ChooseButton1.IsVisible = true;
+            ChooseButton2.IsVisible = true;
+        }
 
-            List<string> TempBatGoalData = new List<string>();
-            TempBatGoalData = BatGoalData.GetData(listBatGoalNum[0]);
-            BatGoalName0.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalName];
-            BatGoalDesc0.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalDescription];
-            BatGoalChecks0.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalChecks];
-            TempBatGoalData = BatGoalData.GetData(listBatGoalNum[1]);
-            BatGoalName1.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalName];
-            BatGoalDesc1.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalDescription];
-            BatGoalChecks1.Text = TempBatGoalData[(int)BattleGoalData.BattleGoalListOrder.BatGoalChecks];
+        private void ChosenGoal1(object sender, EventArgs e)
+        {
+            ChooseButton1.IsEnabled = false;
+            ChooseButton2.IsEnabled = false;
+            ChooseButton1.IsVisible = false;
+            ChooseButton2.IsVisible = false;
+            BatGoalName1.Text = "";
+            BatGoalDesc1.Text = "";
+            BatGoalChecks1.Text = "";
+        }
+
+        private void ChosenGoal2(object sender, EventArgs e)
+        {
+            ChooseButton1.IsEnabled = false;
+            ChooseButton2.IsEnabled = false;
+            ChooseButton1.IsVisible = false;
+            ChooseButton2.IsVisible = false;
+            BatGoalName0.Text = "";
+            BatGoalDesc0.Text = "";
+            BatGoalChecks0.Text = "";
         }
     }
 }
